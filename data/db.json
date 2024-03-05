@@ -1,0 +1,19 @@
+{
+    "items" : [
+        {
+            "id":1,
+            "checked": false,
+            "item":"sapdanum"
+        },
+        {
+            "id":2,
+            "checked": false,
+            "item":"phone nondanum"
+        },
+        {
+            "id":3,
+            "checked": false,
+            "item":"thoonganum"
+        }
+    ]
+}
