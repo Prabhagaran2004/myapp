@@ -23,12 +23,7 @@ function App() {
       id: 3,
       checked: false,
       porul: "phone nondanum",
-    },
-    {
-      id: 4,
-      checked: false,
-      porul: "po da mairu",
-    },
+    }
   ]);
 
   const [newPorul , setnewPorul] =useState("")
@@ -65,7 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <AddItem 
         newPorul ={newPorul}
         setnewPorul={setnewPorul}

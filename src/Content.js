@@ -13,5 +13,5 @@ const Content = ({ porulgal, maathu, edu }) => {
     </main>
   );
 };
-
+   
 export default Content;
