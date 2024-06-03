@@ -1,77 +1,46 @@
-import Header from "./Header";
-import Content from "./Content";
+import { Routes,Route, Link } from "react-router-dom";
+import React from "react";
+import About from "./About";
 import Footer from "./Footer";
-import { useEffect, useState } from "react";
-import AddItem from "./AddItem";
-import SeatchItems from "./SeatchItems";
-
-
+import Header from "./Header";
+import Home from "./Home";
+import Missing from "./Missing";
+import Nav from "./Nav";
+import NewPost from "./NewPost";
+import PostPage from "./PostPage";
+import Post from "./Post";
+import Layout from "./Layout";
 
 function App() {
-  const [porulgal, setporulgal] = useState([
-    {
-      id: 1,
-      checked: true,
-      porul: "thoonganum",
-    },
-    {
-      id: 2,
-      checked: false,
-      porul: "sapdanum",
-    },
-    {
-      id: 3,
-      checked: false,
-      porul: "phone nondanum",
-    }
-  ]);
-
-  const [newPorul , setnewPorul] =useState("")
-  const [search, setsearch] = useState('')
-
-  useEffect (()=>{JSON.parse(localStorage.getItem('todo list'))},)
-
-  const puthuPorul =(porul) => {
-    const id = porulgal.length ? porulgal[porulgal.length -1].id +1 :1;
-    const addNewItem = {id,checked:false,porul}
-    const listItems = [...porulgal,addNewItem]
-    setporulgal(listItems)
-    localStorage.setItem("todo list",JSON.stringify(listItems))
-  }
-
-  const maathu = (id) => {
-    const summa = porulgal.map((porul) =>
-      porul.id === id ? { ...porul, checked: !porul.checked } : porul
-    );
-    setporulgal(summa);
-  };
-  const edu = (id) => {
-    const edukanum = porulgal.filter((porul) => porul.id !== id);
-    setporulgal(edukanum);
-  };
-
-  const seeru = (e) => {
-    e.preventDefault()
-    if (!newPorul) return;
-    console.log(newPorul);
-    puthuPorul(newPorul);
-    setnewPorul('')
-  }
-
+ 
   return (
     <div className="App">
-      <Header />
-      <AddItem 
-        newPorul ={newPorul}
-        setnewPorul={setnewPorul}
-        seeru={seeru}
-      />
-      <SeatchItems 
-        search = {search}
-        setsearch ={setsearch}
-      />
-      <Content porulgal={porulgal.filter(porul => ((porul.porul).toLowerCase()).includes(search.toLowerCase()))} maathu={maathu} edu={edu} />
-      <Footer alavu={porulgal.length} />
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to= "/about">About</Link></li>
+          <li><Link to = "/postpage">PostPage</Link></li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element = {<Home />} />
+        <Route path="/about" element = {<About />} />
+        <Route path="/newpost" element = {<NewPost />} />
+        <Route path="/postpage" element= {<Layout />}>
+          <Route index element = {<PostPage />} />
+          <Route path=":id" element = {<Post />} />
+          <Route path="newpost" element = {<NewPost />} />
+        </Route>
+        <Route path="*" element = {<Missing />} />
+      </Routes>
+      {/* <Header />
+      <Nav />
+      <Home />
+      <NewPost />
+      <PostPage />
+      <About />
+      <Missing />
+      <Footer /> */}
     </div>
   );
 }

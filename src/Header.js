@@ -1,14 +1,9 @@
 import React from 'react'
 
-const Header = ({title}) => {
+const Header = () => {
   return (
-    <header>
-        <h1>{title}</h1>
-    </header>
+    <header>Header</header>
   )
 }
 
-Header.defaultProps = {
-  title:"list create pannitan"
-}
 export default Header
