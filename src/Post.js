@@ -1,10 +1,11 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 
-const Post = () => {
-    const {id} = useParams()
+const Post = ({posts}) => {
   return (
-    <div>Post {id}</div>
+    <article>
+      <h2>{posts.title}</h2>
+      <p>{posts.datetime}</p>
+    </article>
   )
 }
 

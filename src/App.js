@@ -10,37 +10,45 @@ import NewPost from "./NewPost";
 import PostPage from "./PostPage";
 import Post from "./Post";
 import Layout from "./Layout";
+import { useState } from "react";
 
 function App() {
+  const [posts,setPosts] = useState([
+    {
+      id : 1,
+      title : "Chest Workout",
+      datetime : "Today"
+    },
+    {
+      id : 2,
+      title : "Arms Workout",
+      datetime : "Tomorrom"
+    },
+    {
+      id : 3,
+      title : "Leg Workout",
+      datetime : "Day after tomorrow"
+    }
+    
+  ])
+  const [search,setSearch] = useState('')
+  const [result,setResult] = useState([])
  
   return (
     <div className="App">
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to= "/about">About</Link></li>
-          <li><Link to = "/postpage">PostPage</Link></li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/" element = {<Home />} />
-        <Route path="/about" element = {<About />} />
-        <Route path="/newpost" element = {<NewPost />} />
-        <Route path="/postpage" element= {<Layout />}>
-          <Route index element = {<PostPage />} />
-          <Route path=":id" element = {<Post />} />
-          <Route path="newpost" element = {<NewPost />} />
-        </Route>
-        <Route path="*" element = {<Missing />} />
-      </Routes>
-      {/* <Header />
-      <Nav />
-      <Home />
+      <Header title = "GYMRATS MEDIA"/>
+      <Nav 
+        search = {search}
+        setSearch = {setSearch}
+      />
+      <Home 
+        posts = {posts}
+      />
       <NewPost />
       <PostPage />
       <About />
       <Missing />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
