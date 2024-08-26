@@ -1,0 +1,22 @@
+{
+    "posts":[
+        {
+            "id" : 1,
+            "title" : "Chest Workout",
+            "datetime" : "Aug 31,2023 11:34:24 AM",
+            "body" : "chest press, bench press"
+          },
+          {
+            "id" : 2,
+            "title" : "Arms Workout",
+            "datetime" : "Aug 31,2023 11:34:24 AM",
+            "body" : "curls, machine curls, hammer curls"
+          },
+          {
+            "id" : 3,
+            "title" : "Leg Workout",
+            "datetime" : "Aug 31,2023 11:34:24 AM",
+            "body" :"squat,balgarian squat,Leg press"
+          }
+    ]
+}

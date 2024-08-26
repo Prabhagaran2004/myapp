@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Missing = () => {
   return (
-    <div>Missing</div>
+    <div>inga ethume illa <Link to='/'>veetuku poo</Link></div>
   )
 }
 

@@ -1,26 +1,32 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Nav = ({search,setSearch}) => {
+const Nav = ({ search, setSearch }) => {
   return (
-    <nav className='Nav'>
-      <form className='form' onSubmit={(e)=> e.preventDefault()}>
+    <nav className="Nav">
+      <form className="form" onSubmit={(e) => e.preventDefault()}>
         <label>Serach Post : </label>
-        <input 
-          id='search'
-          type='text'
-          placeholder='Search...'
+        <input
+          id="search"
+          type="text"
+          placeholder="Search..."
           value={search}
-          onChange={(e) => {setSearch(e.target.value)}}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </form>
       <ul>
-        <li><Link to= "/">Home</Link></li>
-        <li><Link to= "/post ">Post</Link></li>
-        <li><Link to = "/about">About</Link></li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/post ">Post</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

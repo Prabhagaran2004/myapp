@@ -4,8 +4,8 @@ import Post from './Post'
 const Feed = ({posts}) => {
   return (
     <div>
-        {posts.map (posts => (
-            <Post key = {posts.id} posts = {posts} />
+        {posts.map (post => (
+            <Post key = {post.id} post = {post} />
         ))}
     </div>
   )
