@@ -9,7 +9,9 @@ const Post = ({post}) => {
         <p>{post.datetime}</p>
       </Link>
       <h4>{post.body}</h4>
-      
+      <Link to ={`/edit/${post.id}`}>
+        <button>Edit Post</button> 
+      </Link>
     </article>
   )
 }
